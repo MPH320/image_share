@@ -4,8 +4,11 @@
 
 <body>
 	
+	
+	
 	{{> image_add_form}}
   {{> image_big}}
+	
 	
 	
 <br/>
@@ -70,9 +73,16 @@
 
 
 <template name="images">
+	
+	<div class="my_nav">
+		
+			{{> loginButtons}}
+		
+	</div>
+	
 	<h1>Welcome to Image Share!</h1>
 	
-	{{> loginButtons}}<br/><br/>
+	
 	<button class="btn btn-success js-show-image-form">add image</button>
 	
 	<br/>
