@@ -5,3 +5,10 @@ height: 200px;
 width: 200px;
 
 }
+
+#big-image{
+height: 400px;
+left:30px;
+width: 400px;
+position: relative;
+}

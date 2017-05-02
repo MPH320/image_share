@@ -5,10 +5,15 @@
 <body>
 	
 	{{> image_add_form}}
-  <h1>Welcome to Meteor!</h1>
-
+  {{> image_big}}
+	
+	
+<br/>
+	
 	<div class="container">
-  {{> images}}
+		
+  	{{> images}}
+		
 	</div>
 	
 
@@ -35,16 +40,42 @@
 			</div>
 		</div>
 	</div>
+
+</template>
+
+<template name="image_big">
+	
+	<div class="modal fade" id="image_big">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="modal-title"></div>
+				</div>
+				<div class="modal-body">
+					<div class="js-enlarge-image">
+						<img id="big-image" src="">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-warning" data-dismiss="modal">close</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	
 	
 	
 	
 </template>
 
+
 <template name="images">
+	<h1>Welcome to Image Share!</h1>
 	
-	<button class="btn btn-success js-show-image-form">add image</button><br/><br/>
+	{{> loginButtons}}<br/><br/>
+	<button class="btn btn-success js-show-image-form">add image</button>
 	
+	<br/>
 	<div class="row">
 		{{#each images}}
 			<div class="col-xs-12 col-md-4 col-lg-3" id="{{_id}}">

@@ -1,4 +1,5 @@
 Images = new Mongo.Collection("images");
+var big_image = "";
 
 if (Meteor.isClient){
 	
@@ -17,7 +18,10 @@ import './main.html';
 
 Template.images.events({
 	'click .js-image':function(event){
-		$(event.target).css("width", "50px");
+		$("#image_big").modal('show');
+		big_image = this.img_src;
+		console.log(big_image)
+		document.getElementById("big-image").src = big_image;
 	},
 	'click .js-del-image':function(event){
 		var image_id = this._id;
@@ -33,7 +37,7 @@ Template.images.events({
 	},
 	'click .js-show-image-form':function(event){
 		$("#image_add_form").modal('show');
-	},
+	}
 });
 
 
