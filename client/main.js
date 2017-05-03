@@ -1,13 +1,29 @@
+
 Images = new Mongo.Collection("images");
 var big_image = "";
 
 if (Meteor.isClient){
 	
+	Accounts.ui.config({
+		passwordSignupFields: "USERNAME_AND_EMAIL"
+	});
+
 	Template.images.helpers({images:
 		Images.find({}, {sort:{createdOn: -1, rating:-1}})
 	});
 	
-	console.log(Images.find().count());
+
+	Template.body.helpers({username:function(){
+			if(Meteor.user()){
+				return Meteor.user().username;
+			}
+			else{
+				return "guest";
+			}
+		}
+		});
+	
+
 	
 }
 
@@ -59,3 +75,5 @@ Template.image_add_form.events({
 		return false;
 	}
 });
+
+		
