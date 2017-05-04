@@ -10,7 +10,8 @@ Meteor.startup(() => {
 					Images.insert(
 							 {
 									img_src: "IMG_"+i+".JPG",
-									img_alt: "Image number"+i
+									img_alt: "Image number"+i,
+								 	createdBy: "Anonymous"
 								}
 						 );
 				}
