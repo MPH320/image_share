@@ -84,6 +84,12 @@
 		<br/> <br/>
 	{{/if}}
 	
+	<h2>
+		{{#if filtering_images}}
+		Showing images by {{getFilterUser}}. Click to <a href="#" class="js-unset-image-filter">show all images.</a><br/><br/>
+		{{/if}}
+	</h2>
+	
 
 	<div class="row">
 		{{#each images}}

@@ -11,7 +11,7 @@ Meteor.startup(() => {
 							 {
 									img_src: "IMG_"+i+".JPG",
 									img_alt: "Image number"+i,
-								 	createdBy: "Anonymous"
+								 	createdBy: "anonymous"
 								}
 						 );
 				}
